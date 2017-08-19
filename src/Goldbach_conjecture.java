@@ -2,17 +2,20 @@
 public class Goldbach_conjecture {
 
 	public static void main(String[] args) {
-		int totalNumber = 10;
-		for (int firstPrime = 2; firstPrime <= totalNumber; firstPrime++) {
+		int result = 0;
+		int totalNumber = 1000;
+		for (int firstPrime = 2; firstPrime <= totalNumber / 2; firstPrime++) {
 			boolean firstIsPrime = checkPrime(firstPrime);
 			if (firstIsPrime) {
 				int secondPrime = totalNumber - firstPrime;
 				boolean secondIsPrime = checkPrime(secondPrime);
-				if (secondIsPrime) 
+				if (secondIsPrime) {
 					System.out.println(firstPrime + "+" + secondPrime + "=" + totalNumber);
+					result++;
+				}
 			}
 		}
-		// System.out.println(result);
+		System.out.println(result);
 	}
 
 	private static boolean checkPrime(int checkNum) {

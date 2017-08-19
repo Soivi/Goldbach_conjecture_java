@@ -4,10 +4,12 @@ public class Goldbach_conjecture {
 	public static void main(String[] args) {
 		int totalNumber = 10;
 		for (int firstPrime = 2; firstPrime <= totalNumber; firstPrime++) {
-			boolean checkOtherPrime = checkPrime(firstPrime);
-			if (checkOtherPrime) {
+			boolean firstIsPrime = checkPrime(firstPrime);
+			if (firstIsPrime) {
 				int secondPrime = totalNumber - firstPrime;
-				System.out.println(secondPrime + " is Prime Number");
+				boolean secondIsPrime = checkPrime(secondPrime);
+				if (secondIsPrime) 
+					System.out.println(firstPrime + "+" + secondPrime + "=" + totalNumber);
 			}
 		}
 		// System.out.println(result);

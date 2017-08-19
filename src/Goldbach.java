@@ -1,5 +1,8 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
-public class Goldbach_conjecture {
+public class Goldbach {
 	public static void main(String[] args) {
 		int result = 0;
 		int totalNumber = 10000;

@@ -2,27 +2,27 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-public class Goldbach {
+// https://github.com/Soivi/Goldbach_conjecture_java
+class Goldbach {
 	public static void main(String[] args) {
 		int result = 0;
-		int totalNumber = 10000;
-		// Check only the other half of the totalNumber. Minus calculation and secondPrime check handles checking of bigger numbers
+		int totalNumber = 100000;
+		// Check only the other half of the totalNumber. Minus calculation and
+		// secondPrime check handles checking of bigger numbers
 		for (int firstPrime = 2; firstPrime <= totalNumber / 2; firstPrime++) {
 			boolean firstIsPrime = checkPrime(firstPrime);
 			if (firstIsPrime) {
-				// If the firstNumber was prime then minus from the totalNumber and check if the second is prime
+				// FirstNumber was prime minus from the totalNumber and check if second is prime
 				int secondPrime = totalNumber - firstPrime;
 				boolean secondIsPrime = checkPrime(secondPrime);
 				// If the second number was prime +1 to result
-				if (secondIsPrime) {
-					System.out.println(firstPrime + "+" + secondPrime + "=" + totalNumber);
+				if (secondIsPrime)
 					result++;
-				}
 			}
 		}
 		System.out.println(result);
 	}
-	
+
 	// Give integer get boolean was the integer prime number
 	private static boolean checkPrime(int checkNum) {
 		boolean isPrime = true;
